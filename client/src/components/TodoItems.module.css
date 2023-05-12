@@ -1,0 +1,14 @@
+.todo-items-section{
+    background-color: rgb(226 232 240);
+    width: 85%;
+    height:100%;
+    padding: 30px;
+ position: relative;   
+}
+
+
+.list-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}

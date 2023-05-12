@@ -1,0 +1,11 @@
+.btn-new-task{
+    padding: 16px 10px;
+    background-color: #3867d6;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    border: 1px solid #3867d6 ;
+}
