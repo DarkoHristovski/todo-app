@@ -1,0 +1,21 @@
+.spinner-wrapper{
+    height:100px;
+    width: 100px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+
+.spinner{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    animation: spinner-rotate 3s linear infinite;
+    -webkit-animation: spinner-rotate 3s linear infinite;
+}
+
+@keyframes spinner-rotate {
+    to {transform: rotate(360deg);}
+  }
