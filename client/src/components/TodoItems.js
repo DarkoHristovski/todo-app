@@ -11,7 +11,7 @@ return (
 <section className={classes['todo-items-section']}>
 {props.loading && <Spinner/>}
  <ul className={classes['list-wrapper']}>
-{props.task.map(x=> <TodoList key={x.id} {...x}/>)}
+{props.task.map(x=>  <TodoList  {...x}/>)}
 </ul>
 </section>
 );

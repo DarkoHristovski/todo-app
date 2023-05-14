@@ -47,7 +47,54 @@ table {
 	border-spacing: 0;
 }
 
+p{
+	margin-bottom: 1em;
+	font-size: 18px;
+}
 
+/* assistant-regular - latin */
+@font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Assistant';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../src/fonts/assistant-v18-latin-regular.eot'); /* IE9 Compat Modes */
+	src: url('../src/fonts/assistant-v18-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../src/fonts/assistant-v18-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-regular.woff') format('woff'), /* Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../src/fonts/assistant-v18-latin-regular.svg#Assistant') format('svg'); /* Legacy iOS */
+  }
+  /* assistant-500 - latin */
+  @font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Assistant';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../src/fonts/assistant-v18-latin-500.eot'); /* IE9 Compat Modes */
+	src: url('../src/fonts/assistant-v18-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../src/fonts/assistant-v18-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-500.woff') format('woff'), /* Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../src/fonts/assistant-v18-latin-500.svg#Assistant') format('svg'); /* Legacy iOS */
+  }
+  /* assistant-600 - latin */
+  @font-face {
+	font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+	font-family: 'Assistant';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../src/fonts/assistant-v18-latin-600.eot'); /* IE9 Compat Modes */
+	src: url('../src/fonts/assistant-v18-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+		 url('../src/fonts/assistant-v18-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-600.woff') format('woff'), /* Modern Browsers */
+		 url('../src/fonts/assistant-v18-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+		 url('../src/fonts/assistant-v18-latin-600.svg#Assistant') format('svg'); /* Legacy iOS */
+  }
+
+body{
+	font-family: 'Assistant';
+}
 .App {
  display: flex;
   width: 100%;
@@ -65,3 +112,16 @@ html {
   -moz-box-sizing: inherit;
   box-sizing: inherit;
   }
+
+
+  .btn{
+    padding: 16px 10px;
+    background-color: #3867d6;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    display: block;
+    width: 100%;
+    border: 1px solid #3867d6 ;
+}
