@@ -10,8 +10,6 @@ import Button from "./components/Button";
 function App() {
   const [tasks, setTasks] = useState([]);
   const[loading, setLoading]= useState(true)
-  const [inputTitle, setInputTitle] = useState('');
-  const [inputDescription, setInputDescription] = useState('');
   const [showModal, setShowModal]= useState(false)
   
 
@@ -28,31 +26,13 @@ function App() {
 
 
 
-const titleChangeHandler = (event) =>{
-  setInputTitle(event.target.value)
-}
 
-const descriptionChangeHandler = (event) =>{
-  setInputDescription(event.target.value)
-}
 
- 
-useEffect(()=>{})
-  const addTaskHandler = (event)=>{
-    event.preventDefault();
-  let newArr= {
-    description:inputDescription,
-    name:inputTitle,
-    'id':'t3',
-    "isDone": false,
-    "isImportant": true}
-    setTasks((state)=>[{
-     ...state,
-    ...newArr
-    }])
-    setShowModal(false)
-
+  const addTaskHandler = (taskObject)=>{
+    setTasks(prevState=> [...prevState, taskObject])
+  setShowModal(false)
   }
+  
   const clickButtonHandler=()=>{
     setShowModal(true);
   }
@@ -60,7 +40,7 @@ useEffect(()=>{})
   return (
     <main className="App">
  <Button clickButtonHandler={clickButtonHandler} />
-     {showModal && <AddNewTask titleChangeHandler={titleChangeHandler} descriptionChangeHandler={descriptionChangeHandler} inputTitle={inputTitle} addTaskHandler={addTaskHandler} />}
+     {showModal && <AddNewTask addTaskHandler={addTaskHandler} />}
       <Spinner />
       <TodoItems task={tasks} loading={loading}></TodoItems>
       <FilterTasks />
