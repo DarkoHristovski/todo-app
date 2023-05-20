@@ -6,8 +6,6 @@ import TodoList from './TodoList';
 
 
 const TodoItems = (props,loader) => {
-    console.log(props)
-
 return (
 <section className={classes['todo-items-section']}>
 {props.loading && <Spinner/>}
