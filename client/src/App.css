@@ -125,3 +125,12 @@ html {
     width: 100%;
     border: 1px solid #3867d6 ;
 }
+
+button + button{
+	margin-top:20px;
+}
+
+.btn.btn-close{
+	background-color: red;
+	border: 1px solid red ;
+}

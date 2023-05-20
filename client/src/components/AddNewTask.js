@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 
 const AddNewTask = (props) => {
 
+    console.log(props.clickCloseHandler)
     const [inputTitle, setInputTitle] = useState('');
     const [inputDescription, setInputDescription] = useState('');
     
@@ -62,6 +63,9 @@ const AddNewTask = (props) => {
           ></textarea>
           <button className="btn" type="submit">
             Add a Task
+          </button>
+          <button onClick={props.clickCloseHandler} className="btn btn-close" type="button">
+           Close
           </button>
         </form>
       </div>

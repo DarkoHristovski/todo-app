@@ -25,9 +25,6 @@ function App() {
   }, []);
 
 
-
-
-
   const addTaskHandler = (taskObject)=>{
     setTasks(prevState=> [...prevState, taskObject])
   setShowModal(false)
@@ -37,13 +34,17 @@ function App() {
     setShowModal(true);
   }
 
+  const clickCloseHandler=()=>{
+    setShowModal(false);
+  }
+
   return (
     <main className="App">
- <Button clickButtonHandler={clickButtonHandler} />
-     {showModal && <AddNewTask addTaskHandler={addTaskHandler} />}
+ 
+     {showModal && <AddNewTask clickCloseHandler={clickCloseHandler} addTaskHandler={addTaskHandler} />}
       <Spinner />
-      <TodoItems task={tasks} loading={loading}></TodoItems>
-      <FilterTasks />
+      <TodoItems task={tasks} loading={loading} />
+      <FilterTasks  clickButtonHandler={clickButtonHandler} />
     </main>
   );
 }
