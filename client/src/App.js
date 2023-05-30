@@ -1,50 +1,65 @@
-import logo from "./logo.svg";
 import "./App.css";
 import TodoItems from "./components/TodoItems";
 import FilterTasks from "./components/FilterTasks";
 import { useState, useEffect } from "react";
 import Spinner from "./components/Spinner";
 import AddNewTask from "./components/AddNewTask";
-import Button from "./components/Button";
+import * as userService from "./services/taskService";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const[loading, setLoading]= useState(true)
-  const [showModal, setShowModal]= useState(false)
-  
+  const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
-  const url =
-    "https://todo-app-7ea63-default-rtdb.europe-west1.firebasedatabase.app/.json";
+  
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((result) => {
-        setTasks(Object.values(result.tasks));
-        setLoading(false)
-      });
+    userService.getAll().then((result) => {
+      setTasks(result);
+      setLoading(false);
+    });
   }, []);
 
 
-  const addTaskHandler = (taskObject)=>{
-    setTasks(prevState=> [...prevState, taskObject])
-  setShowModal(false)
-  }
-  
-  const clickButtonHandler=()=>{
-    setShowModal(true);
-  }
-
-  const clickCloseHandler=()=>{
+   const addTaskHandler = (taskObject) => {
+    setTasks((prevState) => [...prevState, taskObject]);
     setShowModal(false);
-  }
+  };
+
+
+  const editTaskHandler = (taskId, taskObject) => {
+  setTasks(
+  (prevState) => prevState.map((x) => (x.id === taskId ? taskObject : x)),
+  taskObject
+    );
+    setShowModal(false);
+  };
+
+
+const clickButtonHandler = () => {
+  setShowModal(true);
+  };
+
+
+  const clickCloseHandler = () => {
+    setShowModal(false);
+  };
 
   return (
     <main className="App">
- 
-     {showModal && <AddNewTask clickCloseHandler={clickCloseHandler} addTaskHandler={addTaskHandler} />}
+      {showModal && (
+        <AddNewTask
+          clickCloseHandler={clickCloseHandler}
+          addTaskHandler={addTaskHandler}
+        />
+      )}
       <Spinner />
-      <TodoItems task={tasks} loading={loading} />
-      <FilterTasks  clickButtonHandler={clickButtonHandler} />
+      <TodoItems
+        clickCloseHandler={clickCloseHandler}
+        editTaskHandler={editTaskHandler}
+        task={tasks}
+        loading={loading}
+      />
+      <FilterTasks clickButtonHandler={clickButtonHandler} />
     </main>
   );
 }

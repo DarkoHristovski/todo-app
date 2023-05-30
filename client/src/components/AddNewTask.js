@@ -1,41 +1,40 @@
 import classes from "./AddNewTask.module.css";
-import { useState, useEffect } from "react";
-
-
+import { useState} from "react";
+import * as TaskService from '../services/taskService'
+import closeIcon from '../icons/close-icon.svg'
 
 const AddNewTask = (props) => {
+  const [inputTitle, setInputTitle] = useState("");
+  const [inputDescription, setInputDescription] = useState("");
 
-    console.log(props.clickCloseHandler)
-    const [inputTitle, setInputTitle] = useState('');
-    const [inputDescription, setInputDescription] = useState('');
-    
-    const titleChangeHandler = (event) =>{
-        setInputTitle(event.target.value)
-      }
-      
-      const descriptionChangeHandler = (event) =>{
-        setInputDescription(event.target.value)
-      }
+  const titleChangeHandler = (event) => {
+    setInputTitle(event.target.value);
+  };
 
-      const inputSubmitHandler = (event) => {
-      event.preventDefault();
+  const descriptionChangeHandler = (event) => {
+    setInputDescription(event.target.value);
+  };
 
-      if(inputTitle !== ''){
-        const inpuObjects={
-            name:inputTitle,
-            description: inputDescription,
-            id:Math.floor(Math.random() * 999)
-         }
-         props.addTaskHandler(inpuObjects)
-      }
-      
-      }
+  const inputSubmitHandler = (event) => {
+    event.preventDefault();
 
+    if (inputTitle !== "") {
+      const inputObjects = {
+        name: inputTitle,
+        description: inputDescription,
+        id: Math.floor(Math.random() * 999),
+      };
+      props.addTaskHandler(inputObjects);
+      TaskService.CreateTask(inputObjects)
+    }
+  };
 
   return (
     <div className={classes["overlay"]}>
       <div className={classes["form-wrapper"]}>
+      <div className="close-btn"><img src={closeIcon} alt="" /></div>
         <p className={classes["title-form-wrapper"]}>Add a Task</p>
+       
         <form className={classes.form} onSubmit={inputSubmitHandler}>
           <label className={classes["form-label"]} htmlFor="task-title">
             Title
@@ -52,7 +51,7 @@ const AddNewTask = (props) => {
             Description (optional)
           </label>
           <textarea
-           value={inputDescription}
+            value={inputDescription}
             onChange={descriptionChangeHandler}
             placeholder="e.g, study for the test"
             className={classes["task-description"]}
@@ -64,8 +63,12 @@ const AddNewTask = (props) => {
           <button className="btn" type="submit">
             Add a Task
           </button>
-          <button onClick={props.clickCloseHandler} className="btn btn-close" type="button">
-           Close
+          <button
+            onClick={props.clickCloseHandler}
+            className="btn btn-close"
+            type="button"
+          >
+            Close
           </button>
         </form>
       </div>

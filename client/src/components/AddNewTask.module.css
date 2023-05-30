@@ -26,7 +26,6 @@
   flex-direction: column;
 }
 
-
 .task-title,
 .task-description{
     padding: 10px;
@@ -59,4 +58,14 @@
 .task-description:focus,
 .task-description:hover{
     border: 2px solid #3867d6;
+}
+
+
+
+.btn-close{
+  background-color: #FF0000;
+}
+
+.btn-cancel{
+  
 }
