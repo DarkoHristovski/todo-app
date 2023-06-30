@@ -6,7 +6,21 @@ export const getAll = async () => {
   const response = await fetch(url);
   const result = await response.json();
 
-  return Object.values(result.tasks);
+  const finalResult = Object.values(result.tasks);
+  const finalResultObject = Object.entries(result.tasks);
+  let finalResultNew={}
+  for(let i= 0; i<finalResultObject.length; i++){
+    
+   finalResultNew= {
+      ...finalResult,
+      id:finalResultObject[i][0]
+    }
+   
+  }
+
+  console.log(finalResultNew)
+
+  return finalResult
 };
 
 export const getOne = async (taskId) => {
