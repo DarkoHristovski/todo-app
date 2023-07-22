@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Todo from './components/todo/Todo';
+import{useState} from 'react'
 
 function App() {
+
+  const [todoItems, setTodoItems]=useState([
+    {"name":"Learning HTML","description":"Learning new skills","done":true},
+    {"name":"CSS","description":"Learning new lectures","done":true},
+    {"name":"Responsive design","description":"Learning new skills","done":true},
+    {"name":"Git","description":"Learning new skills","done":true},
+    {"name":"JavaScript I","description":"Learning new skills","done":true},
+    {"name":"JavaScript II","description":"Learning new skills","done":false}
+    ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+ <main>
+<Todo/>
+</main>
+<aside>
+this is aside
+</aside>
     </div>
   );
 }

@@ -1,12 +1,30 @@
+html,
+body,
+#root,
+.App,
+main,
+aside{
+  height:100%;
+}
+
 .App {
   text-align: center;
+  display: flex;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+main{
+  width: 80%;
+}
+aside{
+  width: 20%;
+  box-shadow: -1px 0px 1px 1px #f2f2f2;
+  
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -36,3 +54,4 @@
     transform: rotate(360deg);
   }
 }
+
