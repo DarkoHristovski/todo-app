@@ -2,6 +2,7 @@ import "./App.css";
 import Todo from "./components/todo/Todo";
 import Aside from "./components/aside/Aside";
 import Modal from "./components/modal/Modal";
+import NewTask from "./components/newTask/NewTaks"
 import { useId } from "react-id-generator";
 import { useState } from "react";
 
@@ -40,7 +41,7 @@ function App() {
   return (
     <div className="App">
       <main>
-        {showModal && <Modal addTaskHandler={addTaskHandler} closeModal={closeModal} />}
+        {showModal && <NewTask addTaskHandler={addTaskHandler} closeModal={closeModal} />}
         <Todo todo={todoItems} />
       </main>
       <Aside openModal={openModal} />

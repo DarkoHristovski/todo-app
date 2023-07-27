@@ -15,5 +15,11 @@
 }
 
 .todo-section-wrapper .card-bottom{
-    padding-top: 50px;
+    padding-top: 30px;
 }
+
+.todo-section-wrapper .button-group{
+    display: flex;
+    justify-content: flex-end;
+}
+

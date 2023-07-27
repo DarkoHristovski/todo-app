@@ -6,6 +6,7 @@ import deleteIcon from '../../icons/delete-icon.svg'
 import importantIcon from '../../icons/important-icon.svg'
 
 const TodoList = (props) => {
+  console.log(props.content)
   return (
     <Card className="todo-card">
       <div>
@@ -16,7 +17,7 @@ const TodoList = (props) => {
         <div className="card-bottom"> 
         <div className="button-group">
         <img className="icon" src={importantIcon} alt="" />
-          <img className="icon" src={editIcon} alt="" />
+          <img className="icon" onClick={()=>alert(props.content.id)} src={editIcon} alt="" />
           <img className="icon" src={deleteIcon} alt="" />
         </div>
         </div>

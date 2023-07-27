@@ -24,7 +24,7 @@ const onSubmit=(e)=>{
 
     props.addTaskHandler(newObj)
 }
-
+console.log(props.onClose)
 
   return (
     <div className="modal-overlay">
@@ -35,22 +35,10 @@ const onSubmit=(e)=>{
             Add a Task
           </div>
           <div className="modal-card-top-right">
-            <img onClick={props.closeModal} className="icon icon-close" src={closeIcon} alt="" />
+            <img onClick={props.onClose} className="icon icon-close" src={closeIcon} alt="" />
           </div>
         </div>
-        <form onSubmit={onSubmit}>
-          <input type="text" value={taskValue} onChange={(e)=>setTaskValue(e.target.value)} id="task" name="task" placeholder="Task name" />
-          <textarea
-            name="description"
-            value={descriptionValue}
-            placeholder="Task description"
-            id="description"
-            cols="20"
-            rows="10"
-            onChange={(e)=>setDescriptionValue(e.target.value)}
-          ></textarea>
-          <button type="submit">Add a Task</button>
-        </form>
+    {props.children}
       </Card>
     </div>
   );
