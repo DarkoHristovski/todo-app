@@ -1,5 +1,19 @@
 .todo-section{
-    background-color: red;
     height: 100%;
     width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+
 }
+
+.todo-section,
+.todo-section-wrapper{ 
+    display: flex;
+    align-items: baseline;}
+    
+    .todo-section-wrapper{
+        justify-content: flex-start;
+        width: 90%;
+        flex-wrap: wrap;
+        justify-content:flex-start
+    }

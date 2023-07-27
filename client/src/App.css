@@ -1,3 +1,7 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root,
@@ -53,5 +57,11 @@ aside{
   to {
     transform: rotate(360deg);
   }
+}
+
+.icon{
+  height:20px;
+  width: 20px;
+  object-fit: contain;
 }
 

@@ -1,0 +1,65 @@
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+.modal-overlay form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-overlay .card {
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+}
+
+.modal-overlay textarea,
+.modal-overlay input,
+.modal-overlay button {
+    padding: 20px 10px;
+    border-radius: 6px;
+    border: 1px solid gray;
+    font-size: 20px;
+}
+
+.modal-card-top-right,
+.modal-overlay button {
+    cursor: pointer;
+}
+
+
+.modal-overlay textarea {
+    margin: 20px 0;
+    resize: none;
+}
+
+
+.icon {
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+
+.modal-overlay .modal-card-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.modal-overlay .modal-card-top-left {
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+}

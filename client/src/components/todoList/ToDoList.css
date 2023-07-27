@@ -1,0 +1,19 @@
+.todo-section-wrapper{
+   
+}
+
+.todo-section-wrapper .card{
+    width: 24%;
+    margin: 5px;
+    text-align: left;
+}
+
+
+.todo-section-wrapper .card-top{
+    padding-bottom: 30px;
+    border-bottom: 1px solid black;
+}
+
+.todo-section-wrapper .card-bottom{
+    padding-top: 50px;
+}
